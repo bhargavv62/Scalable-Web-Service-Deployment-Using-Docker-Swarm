@@ -211,6 +211,23 @@ Docker Swarm is a powerful yet simple tool for container orchestration. If you n
 If you're just starting, I recommend setting up a small cluster and experimenting with deployments. Understanding Docker Swarm will give you a solid foundation in container orchestration and help you scale applications effortlessly.
 
 
+# 👨‍💻 Author & Contributors
+
+Bhargav 💡 maintains this project.Open to feedback, ideas, and contributions are warmly welcomed.
+
+# 🤝 Let’s Collaborate:
+
+GitHub: https://github.com/bhargavv62
+
+
+# 🚀 Support & Contribute
+Found this project useful?
+
+•	Add a ⭐ to show your appreciation
+
+•	Spread the word by sharing it
+
+•	Contributing ideas, fixes, or improvements
 
 
 
