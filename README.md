@@ -85,7 +85,7 @@ Exposes port 8081 on all nodes
 ![workernode-1](https://github.com/user-attachments/assets/18fc2d9b-9a40-4da2-b436-f1958fb6d63e)
 
 
-## OUPUT FROM WORKER-2 NODE:
+## OUTPUT FROM WORKER-2 NODE:
 
 ![WORKERNODE-2](https://github.com/user-attachments/assets/3a1f4fef-9c5b-4391-b8da-674a5f4d0d23)
 
