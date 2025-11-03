@@ -25,3 +25,31 @@ The manager node assigns tasks to worker nodes, ensuring high availability and s
 Let’s walk through a real-world scenario where we deploy a multi-node Docker Swarm cluster.
 
 Launch 3 EC2 Instances (1 Master, 2 Worker Nodes).
+
+![instance](https://github.com/user-attachments/assets/51b9ee10-8681-4245-985d-15c99897aaa4)
+
+Lets install docker on each node
+
+yum install docker -y && systemctl start docker                                                                                                                         
+
+# Step 1: Initialize the Swarm on Master
+
+docker swarm init  
+
+<img width="2880" height="884" alt="docker swarm init" src="https://github.com/user-attachments/assets/dfe65721-45fc-436b-9772-4da90fdbf11a" />
+
+This command initializes Swarm mode and generates a token. If we copy the token and paste it on worker node, then the worker node will join in the docker swarm cluster.
+
+## worker-1:
+
+<img width="2870" height="110" alt="worker-1" src="https://github.com/user-attachments/assets/7d3014e6-600e-412b-88c2-a00e282ef4b9" />
+
+## worker-2:
+
+<img width="2828" height="174" alt="worker-2" src="https://github.com/user-attachments/assets/507f242c-cd82-4c9c-ba9b-5cca00f00563" />
+
+# Step 2: Verify the Cluster
+
+On the manager node, check the status of the cluster:
+
+
