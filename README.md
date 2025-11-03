@@ -77,15 +77,18 @@ Exposes port 8081 on all nodes
 
 ## OUPUT FROM MANAGER NODE:
 
-<img width="2880" height="1650" alt="manager-node" src="https://github.com/user-attachments/assets/f14451d5-8fba-42c4-982e-a3235a7e0ee9" />
+![manager-node](https://github.com/user-attachments/assets/5421a182-5b06-4d67-ab17-f746ae1d0551)
+
 
 ## OUPUT FROM WORKER-1 NODE:
 
-<img width="2880" height="1610" alt="node-1-out" src="https://github.com/user-attachments/assets/a42238d9-f528-459c-a389-118d9bb34daa" />
+![manager-node](https://github.com/user-attachments/assets/fd3e5a35-82e1-4312-bac0-bc63e0fefebc)
+
 
 ## OUPUT FROM WORKER-2 NODE:
 
-<img width="2880" height="1658" alt="node-2-out" src="https://github.com/user-attachments/assets/0cdf0c92-da9f-400f-a454-459c2d56da1f" />
+![manager-node](https://github.com/user-attachments/assets/3e1619f8-b265-473d-bbdf-2a8f452391b9)
+
 
 ## Checking Service Status
 
