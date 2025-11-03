@@ -133,13 +133,15 @@ Swarm updates containers one at a time, ensuring zero downtime.
 
 ![OUTPUT-MAIN](https://github.com/user-attachments/assets/b6e6aa56-ac4f-436b-84f3-32194ad8f9da)
 
-## OUPUT FROM WORKER-1 NODE:
+## OUTPUT FROM WORKER-1 NODE:
 
-![OUTPUT-MAIN](https://github.com/user-attachments/assets/e8579e26-1fe2-4676-8b47-7d759efccf0c)
+![WKND-2](https://github.com/user-attachments/assets/0bf32a1f-e329-486f-8ad2-52c4f4e8600e)
 
-## OUPUT FROM WORKER-12 NODE:
 
-![OUTPUT-MAIN](https://github.com/user-attachments/assets/03c37d13-f207-44ef-b207-df5758c92ce1)
+## OUTPUT FROM WORKER-2 NODE:
+
+![WKND-2](https://github.com/user-attachments/assets/1473dd21-31d7-46a6-a504-f8b4193d9c7d)
+
 
 ## Rollback in Docker Swarm
 
@@ -149,15 +151,20 @@ docker service rollback bhargav
 
 Now check the output, you can see the old output in browser
 
-<img width="2880" height="1660" alt="b104c7e9-c260-4347-82bc-888007c72bd3" src="https://github.com/user-attachments/assets/a0c1b0ed-6670-4aee-97f0-86d7485388b6" />
+## OUTPUT FROM MANAGER NODE:
 
-## OUPUT FROM WORKER-1 NODE:
+<img width="2880" height="1660" alt="MNG" src="https://github.com/user-attachments/assets/121d466d-1bf2-45de-9b6e-ee31be9f722c" />
 
-<img width="2880" height="1660" alt="b104c7e9-c260-4347-82bc-888007c72bd3" src="https://github.com/user-attachments/assets/e4af34f6-246a-44bf-924a-070d7b32e51e" />
 
-## OUPUT FROM WORKER-2 NODE:
+## OUTPUT FROM WORKER-1 NODE:
 
-<img width="2880" height="1660" alt="b104c7e9-c260-4347-82bc-888007c72bd3" src="https://github.com/user-attachments/assets/64bdcbb0-f204-49c4-8d9d-483d9c0aa0c0" />
+![ND-1](https://github.com/user-attachments/assets/0efa70cc-02fc-4ed9-95ae-4b64b9830da5)
+
+
+## OUTPUT FROM WORKER-2 NODE:
+
+![WK-2](https://github.com/user-attachments/assets/f12f557c-0b99-4aa5-8444-4e0345387fc8)
+
 
 ## Remove a Service in Docker Swarm
 
