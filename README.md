@@ -75,19 +75,20 @@ Runs 3 replicas (instances) of the mustafa container
 
 Exposes port 8081 on all nodes
 
-## OUPUT FROM MANAGER NODE:
+## OUTPUT FROM MANAGER NODE:
 
 ![manager-node](https://github.com/user-attachments/assets/5421a182-5b06-4d67-ab17-f746ae1d0551)
 
 
-## OUPUT FROM WORKER-1 NODE:
+## OUTPUT FROM WORKER-1 NODE:
 
-![manager-node](https://github.com/user-attachments/assets/fd3e5a35-82e1-4312-bac0-bc63e0fefebc)
+![workernode-1](https://github.com/user-attachments/assets/18fc2d9b-9a40-4da2-b436-f1958fb6d63e)
 
 
 ## OUPUT FROM WORKER-2 NODE:
 
-![manager-node](https://github.com/user-attachments/assets/3e1619f8-b265-473d-bbdf-2a8f452391b9)
+![WORKERNODE-2](https://github.com/user-attachments/assets/3a1f4fef-9c5b-4391-b8da-674a5f4d0d23)
+
 
 
 ## Checking Service Status
