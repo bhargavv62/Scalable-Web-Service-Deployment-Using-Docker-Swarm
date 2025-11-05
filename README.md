@@ -1,6 +1,3 @@
-# Scalable-Web-Service-Deployment-Using-Docker-Swarm
-
-
 ## Description
 
 This project demonstrates the deployment of a scalable web service using Docker Swarm for container orchestration. As a DevOps Engineer, I utilized Docker Swarm to efficiently manage containerized applications across multiple nodes, ensuring reliability, scalability, and simplified management.
@@ -27,7 +24,8 @@ Let’s walk through a real-world scenario where we deploy a multi-node Docker S
 
 Launch 3 EC2 Instances (1 Master, 2 Worker Nodes).
 
-![instance](https://github.com/user-attachments/assets/51b9ee10-8681-4245-985d-15c99897aaa4)
+<img width="1520" height="367" alt="instance" src="https://github.com/user-attachments/assets/7f7f8716-08cc-41e0-bc5c-95a6ff62a41c" />
+
 
 Lets install docker on each node
 
@@ -37,17 +35,20 @@ yum install docker -y && systemctl start docker
 
 docker swarm init  
 
-<img width="2880" height="884" alt="docker swarm init" src="https://github.com/user-attachments/assets/dfe65721-45fc-436b-9772-4da90fdbf11a" />
+<img width="1591" height="287" alt="swarm-init" src="https://github.com/user-attachments/assets/38d6c89c-f2fa-47e8-af31-cd55204dc62d" />
+
 
 This command initializes Swarm mode and generates a token. If we copy the token and paste it on worker node, then the worker node will join in the docker swarm cluster.
 
 ## worker-1:
 
-<img width="2870" height="110" alt="worker-1" src="https://github.com/user-attachments/assets/7d3014e6-600e-412b-88c2-a00e282ef4b9" />
+<img width="1599" height="236" alt="worker-1" src="https://github.com/user-attachments/assets/14b894fa-ac8a-4d1f-a710-555c09e86635" />
+
 
 ## worker-2:
 
-<img width="2828" height="174" alt="worker-2" src="https://github.com/user-attachments/assets/507f242c-cd82-4c9c-ba9b-5cca00f00563" />
+<img width="1595" height="157" alt="worker-2" src="https://github.com/user-attachments/assets/6cc5fb28-4d03-4826-8d9c-d4d77af8a819" />
+
 
 ## Step 2: Verify the Cluster
 
@@ -57,15 +58,17 @@ docker node ls
 
 You should see a list of all nodes in the cluster.
 
-<img width="2708" height="214" alt="node-cluster" src="https://github.com/user-attachments/assets/416db6db-3dbb-429b-aa76-04e8c7adcf3c" />
+<img width="1592" height="176" alt="node-ls" src="https://github.com/user-attachments/assets/fb9c88fb-27de-414e-8445-b90a7c3c3c1e" />
+
 
 ## Deploying a Service in Docker Swarm
 
 Let’s deploy a simple application across the cluster.
 
-docker service create --name bhargav --replicas 3 -p 8081:80 bhargav/dm
+docker service create --name bhargav --replicas 3 -p 8081:80 bhargav62/dm
 
-<img width="2880" height="498" alt="docker-srvc" src="https://github.com/user-attachments/assets/c2d90f17-d880-47c4-96b1-6b4fae4cfc90" />
+<img width="1595" height="218" alt="bhargav62dm" src="https://github.com/user-attachments/assets/3a4e40c2-6497-4714-b6e2-426edc7f3012" />
+
 
 ## This command:
 
@@ -77,17 +80,19 @@ Exposes port 8081 on all nodes
 
 ## OUTPUT FROM MANAGER NODE:
 
-![manager-node](https://github.com/user-attachments/assets/5421a182-5b06-4d67-ab17-f746ae1d0551)
+<img width="1920" height="943" alt="manager-1" src="https://github.com/user-attachments/assets/fd30b5cb-673f-4148-bd09-9e5aeebae064" />
+
 
 
 ## OUTPUT FROM WORKER-1 NODE:
 
-![workernode-1](https://github.com/user-attachments/assets/18fc2d9b-9a40-4da2-b436-f1958fb6d63e)
+<img width="1920" height="936" alt="worker-1-0t" src="https://github.com/user-attachments/assets/aa32f3d6-6f91-4ad3-8a08-d9dcac0ba9f1" />
 
 
 ## OUTPUT FROM WORKER-2 NODE:
 
-![WORKERNODE-2](https://github.com/user-attachments/assets/3a1f4fef-9c5b-4391-b8da-674a5f4d0d23)
+<img width="1920" height="941" alt="worker-2-ot" src="https://github.com/user-attachments/assets/f9fd0a98-7859-43c9-a65b-e23be6dbd341" />
+
 
 
 
@@ -97,45 +102,51 @@ To check if the service is running, use:
 
 docker service ls
 
-<img width="2572" height="248" alt="status" src="https://github.com/user-attachments/assets/8acf97d9-d07c-4b55-99f4-b40e68adac87" />
+<img width="1085" height="113" alt="service-ls" src="https://github.com/user-attachments/assets/1d6ac734-bd5c-448b-98e8-e170fb3b25d7" />
+
 
 To see details of running tasks (containers), use:
 
-docker service ps mustafa
+docker service ps bhargav
 
-<img width="2878" height="238" alt="ps-mstfa" src="https://github.com/user-attachments/assets/e73159cc-d733-4413-bf2f-2548ee060726" />
+<img width="1551" height="214" alt="service-ps" src="https://github.com/user-attachments/assets/19eee72b-22e6-49c2-974d-c0d2ca2bfca9" />
+
 
 ## Scaling Services in Docker Swarm
 
 Scaling is effortless in Swarm. If traffic increases, you can scale up with:
 
-docker service scale mustafa=5
+docker service scale bhargav=5
 
 This increases the Nginx service replicas to 5. Swarm automatically distributes them across available nodes.
 
-![avlable-nodes](https://github.com/user-attachments/assets/9ee61f80-5f91-42b2-b228-ba25d81aee33)
+<img width="1209" height="258" alt="scale=5" src="https://github.com/user-attachments/assets/26addde7-b24f-43a3-afa1-b4790e77083b" />
+
 
 Now lets check the number of containers, previously we have 3 containers now we scale up to 5, it will show 5 containers for your services
 
-docker service ps mustafa
+docker service ps bhargav
 
 ## Rolling Updates in Docker Swarm
 
 Imagine you need to update your application to a newer version. Instead of taking everything down, Swarm allows rolling updates:
 
-sudo docker service update --image shaikmustafa/cycle mustafa
+sudo docker service update --image bhargav/cycle bhargav
 
 Swarm updates containers one at a time, ensuring zero downtime.
 
-![updatd-containers](https://github.com/user-attachments/assets/27d1de88-863d-4d58-9075-807e08f6b942)
+<img width="1269" height="307" alt="service-up-cycle" src="https://github.com/user-attachments/assets/b706ce1f-ccef-493d-9b9b-befb2bc2b796" />
+
 
 ## OUTPUT FROM MANAGER NODE:
 
-![OUTPUT-MAIN](https://github.com/user-attachments/assets/b6e6aa56-ac4f-436b-84f3-32194ad8f9da)
+<img width="1920" height="935" alt="master-op" src="https://github.com/user-attachments/assets/f5ab99bb-b4be-4255-9ab0-d5e368d3f715" />
+
 
 ## OUTPUT FROM WORKER-1 NODE:
 
-![WKND-2](https://github.com/user-attachments/assets/0bf32a1f-e329-486f-8ad2-52c4f4e8600e)
+<img width="1920" height="930" alt="worker-1-op" src="https://github.com/user-attachments/assets/f17455ec-3609-4b4c-9e4c-439d65e8917b" />
+
 
 
 ## OUTPUT FROM WORKER-2 NODE:
@@ -163,16 +174,18 @@ Now check the output, you can see the old output in browser
 
 ## OUTPUT FROM WORKER-2 NODE:
 
-![WK-2](https://github.com/user-attachments/assets/f12f557c-0b99-4aa5-8444-4e0345387fc8)
+<img width="1920" height="945" alt="worker-2-op" src="https://github.com/user-attachments/assets/446464b6-2b00-4fb5-b3c2-b08f4f456705" />
+
 
 
 ## Remove a Service in Docker Swarm
 
-docker service rm mustafa
+docker service rm bhargav
 
 When we remove a service, it will delete the containers also
 
-![rm-mstfa](https://github.com/user-attachments/assets/62aacede-756b-4ec2-8da2-4e3a6493eb1e)
+<img width="852" height="57" alt="service-rm" src="https://github.com/user-attachments/assets/2f3a48ea-5a71-4114-8f8d-5569ba1b32a4" />
+
 
 ## Cluster Maintenance in Docker Swarm
 
@@ -182,23 +195,27 @@ Till now we maintained applications on Docker swarm, now let me know you how to 
 
  docker swarm leave
 
-![dkr-swm-lve](https://github.com/user-attachments/assets/6ea1bd24-9074-4e3a-b386-52c5a1eeb04f)
+<img width="750" height="98" alt="node1-leave" src="https://github.com/user-attachments/assets/485ecbed-f8b9-4bf9-aed0-f5897cdff558" />
+
 
 After 10 seconds, this node went to Down state in cluster.
 
  docker node ls
 
-<img width="2880" height="422" alt="image" src="https://github.com/user-attachments/assets/0bd9c84e-1e63-4ec8-9939-7ac4e68942bd" />
+<img width="1375" height="182" alt="node-ls-leave" src="https://github.com/user-attachments/assets/655f6c65-35e5-4c60-8ebc-67366d8f8eec" />
+
 
 Now remove the node from the cluster
 
  docker node rm <node-id>
 
-<img width="1694" height="186" alt="image" src="https://github.com/user-attachments/assets/083bea45-97b4-4b86-a07e-f8c91fb63c20" />
+<img width="1109" height="129" alt="node-rm" src="https://github.com/user-attachments/assets/3b0d7158-6937-4c9a-bb1f-e57542ee31ad" />
+
 
 Now see we have have only 2 Nodes
 
-<img width="2880" height="328" alt="image" src="https://github.com/user-attachments/assets/d7a6864e-f0f9-4e47-8024-31c1d65dd8af" />
+<img width="1376" height="145" alt="node-ls-after-rm" src="https://github.com/user-attachments/assets/75d45d7a-0049-4479-8e82-f06e004284f7" />
+
 
 2. If you want to add a worker node to our cluster, we need o get a worker node token
 
