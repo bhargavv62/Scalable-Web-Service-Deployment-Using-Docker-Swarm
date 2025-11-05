@@ -158,7 +158,8 @@ Swarm updates containers one at a time, ensuring zero downtime.
 
 docker service rollback bhargav
 
-<img width="982" height="328" alt="service-rollback" src="https://github.com/user-attachments/assets/58c884cd-ed07-44e2-8cce-bdf2556648d5" />
+<img width="982" height="328" alt="service-rollback" src="https://github.com/user-attachments/assets/c5064861-d1a7-4cac-a60b-703bd39fcc8d" />
+
 
 
 Now check the output, you can see the old output in browser
