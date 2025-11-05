@@ -74,7 +74,7 @@ docker service create --name bhargav --replicas 3 -p 8081:80 bhargav62/dm
 
 Creates a service named bhargav
 
-Runs 3 replicas (instances) of the mustafa container
+Runs 3 replicas (instances) of the bhargav container
 
 Exposes port 8081 on all nodes
 
@@ -131,7 +131,7 @@ docker service ps bhargav
 
 Imagine you need to update your application to a newer version. Instead of taking everything down, Swarm allows rolling updates:
 
-sudo docker service update --image bhargav/cycle bhargav
+sudo docker service update --image bhargav62/cycle bhargav
 
 Swarm updates containers one at a time, ensuring zero downtime.
 
