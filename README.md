@@ -127,6 +127,8 @@ Now lets check the number of containers, previously we have 3 containers now we 
 
     docker service ps bhargav
 
+    
+
 ## Rolling Updates in Docker Swarm
 
 Imagine you need to update your application to a newer version. Instead of taking everything down, Swarm allows rolling updates:
