@@ -29,11 +29,11 @@ Launch 3 EC2 Instances (1 Master, 2 Worker Nodes).
 
 Lets install docker on each node
 
-yum install docker -y && systemctl start docker                                                                                                                         
+    yum install docker -y && systemctl start docker                                                                                                                         
 
 ## Step 1: Initialize the Swarm on Master
 
-docker swarm init  
+    docker swarm init  
 
 <img width="1591" height="287" alt="swarm-init" src="https://github.com/user-attachments/assets/38d6c89c-f2fa-47e8-af31-cd55204dc62d" />
 
@@ -54,7 +54,7 @@ This command initializes Swarm mode and generates a token. If we copy the token 
 
 On the manager node, check the status of the cluster:
 
-docker node ls
+    docker node ls
 
 You should see a list of all nodes in the cluster.
 
@@ -65,7 +65,7 @@ You should see a list of all nodes in the cluster.
 
 Let’s deploy a simple application across the cluster.
 
-docker service create --name bhargav --replicas 3 -p 8081:80 bhargav62/dm
+    docker service create --name bhargav --replicas 3 -p 8081:80 bhargav62/dm
 
 <img width="1595" height="218" alt="bhargav62dm" src="https://github.com/user-attachments/assets/3a4e40c2-6497-4714-b6e2-426edc7f3012" />
 
@@ -100,14 +100,14 @@ Exposes port 8081 on all nodes
 
 To check if the service is running, use:
 
-docker service ls
+    docker service ls
 
 <img width="1085" height="113" alt="service-ls" src="https://github.com/user-attachments/assets/1d6ac734-bd5c-448b-98e8-e170fb3b25d7" />
 
 
 To see details of running tasks (containers), use:
 
-docker service ps bhargav
+    docker service ps bhargav
 
 <img width="1551" height="214" alt="service-ps" src="https://github.com/user-attachments/assets/19eee72b-22e6-49c2-974d-c0d2ca2bfca9" />
 
@@ -116,7 +116,7 @@ docker service ps bhargav
 
 Scaling is effortless in Swarm. If traffic increases, you can scale up with:
 
-docker service scale bhargav=5
+    docker service scale bhargav=5
 
 This increases the Nginx service replicas to 5. Swarm automatically distributes them across available nodes.
 
@@ -125,13 +125,13 @@ This increases the Nginx service replicas to 5. Swarm automatically distributes 
 
 Now lets check the number of containers, previously we have 3 containers now we scale up to 5, it will show 5 containers for your services
 
-docker service ps bhargav
+    docker service ps bhargav
 
 ## Rolling Updates in Docker Swarm
 
 Imagine you need to update your application to a newer version. Instead of taking everything down, Swarm allows rolling updates:
 
-sudo docker service update --image bhargav62/cycle bhargav
+    sudo docker service update --image bhargav62/cycle bhargav
 
 Swarm updates containers one at a time, ensuring zero downtime.
 
@@ -156,7 +156,7 @@ Swarm updates containers one at a time, ensuring zero downtime.
 
 ## Rollback in Docker Swarm
 
-docker service rollback bhargav
+    docker service rollback bhargav
 
 <img width="982" height="328" alt="service-rollback" src="https://github.com/user-attachments/assets/c5064861-d1a7-4cac-a60b-703bd39fcc8d" />
 
@@ -182,7 +182,7 @@ Now check the output, you can see the old output in browser
 
 ## Remove a Service in Docker Swarm
 
-docker service rm bhargav
+    docker service rm bhargav
 
 When we remove a service, it will delete the containers also
 
@@ -195,21 +195,21 @@ Till now we maintained applications on Docker swarm, now let me know you how to 
 
 1.To remove a node from cluster, go to that worker node and perform the below command.
 
- docker swarm leave
+    docker swarm leave
 
 <img width="750" height="98" alt="node1-leave" src="https://github.com/user-attachments/assets/485ecbed-f8b9-4bf9-aed0-f5897cdff558" />
 
 
 After 10 seconds, this node went to Down state in cluster.
 
- docker node ls
+    docker node ls
 
 <img width="1375" height="182" alt="node-ls-leave" src="https://github.com/user-attachments/assets/655f6c65-35e5-4c60-8ebc-67366d8f8eec" />
 
 
 Now remove the node from the cluster
 
- docker node rm <node-id>
+    docker node rm <node-id>
 
 <img width="1109" height="129" alt="node-rm" src="https://github.com/user-attachments/assets/3b0d7158-6937-4c9a-bb1f-e57542ee31ad" />
 
@@ -221,13 +221,13 @@ Now see we have have only 2 Nodes
 
 2. If you want to add a worker node to our cluster, we need o get a worker node token
 
- docker swarm join-token worker
+       docker swarm join-token worker
  
 Now copy the token and paste it on any docker host. It will join as a worker node in your cluster
 
 3. If you want to add a manager node to our cluster, we need o get a worker node token
 
- docker swarm join-token mnager
+       docker swarm join-token mnager
 
 Now copy the token and paste it on any docker host. It will join as a manager node in your cluster
 
